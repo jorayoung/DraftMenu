@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('background.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 30, 30, 0.7);
+            z-index: -1;
+        }
+
+        .logo-container {
+            position: relative;
+            margin-bottom: 40px;
+            z-index: 1;
+        }
+
+        .logo {
+            max-width: 250px;
+            filter: drop-shadow(0 0 10px rgba(0, 191, 255, 0.7));
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px rgba(0, 191, 255, 0.9));
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 300px;
+            z-index: 1;
+        }
+
+        .menu-button {
+            padding: 16px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background: linear-gradient(to right, #0066cc, #00bfff);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .menu-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .menu-button:hover::before {
+            left: 100%;
+        }
+
+        .menu-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #ddd;
+            font-size: 14px;
+            line-height: 1.6;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .version {
+            color: #00bfff;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
+        }
+
+        .author {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="logo.png" alt="Логотип" class="logo">
+    </div>
+    
+    <div class="button-container">
+        <a href="game.html" class="menu-button">Играть</a>
+        <a href="about.html" class="menu-button">О проекте</a>
+        <a href="link.html" class="menu-button">Важные ссылки</a>
+    </div>
+
+    <div class="footer">
+        <p class="author">Автор игры - Jora young (NoStuff)</p>
+        <p>Haxball Draft Manager</p>
+        <p class="version">v.1.0</p>
+    </div>
+</body>
+</html>
